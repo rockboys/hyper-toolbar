@@ -7,7 +7,7 @@ class HyperToolbar extends Component {
   }
 
   render () {
-    return React.createElement('div', this.props,
+    return React.createElement('div', Object.assign(this.props, { className: 'hyper-toolbar' }),
       React.createElement('div', { className: 'left-container'}, this.props.left),
       React.createElement('div', { className: 'center-container'}, this.props.center),
       React.createElement('div', { className: 'right-container'}, this.props.right)

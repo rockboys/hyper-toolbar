@@ -9,8 +9,11 @@ module.exports = (Hyper, { React }) => {
     }
 
     render() {
+      const toolbar = React.createElement(decorate(HyperToolbar, 'HyperToolbar'), this.props.toolbar);
+      const children = Array.from(this.props.customChildren).concat(toolbar);
+
       return React.createElement(Hyper, Object.assign({}, this.props, {
-        customChildren: React.createElement(decorate(HyperToolbar, 'HyperToolbar'), this.props.toolbar)
+        customChildren: children
       }));
     }
   }
