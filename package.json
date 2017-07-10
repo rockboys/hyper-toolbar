@@ -1,0 +1,39 @@
+{
+  "name": "hyper-toolbar",
+  "version": "0.0.0",
+  "description": "Customizable toolbar for Hyper terminal",
+  "homepage": "https://github.com/rockboys/hyper-toolbar",
+  "bugs": "https://github.com/rockboys/hyper-toolbar/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockboys/hyper-toolbar.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add .",
+    "version:major": "npm version major -m \"chore(version): creates version %s\"",
+    "version:minor": "npm version minor -m \"chore(version): creates version %s\"",
+    "version:patch": "npm version patch -m \"chore(version): creates version %s\""
+  },
+  "keywords": [
+    "hyper",
+    "toolbar",
+    "hyper-toolbar"
+  ],
+  "contributors": [
+    {
+      "name": "Pablo Lázaro",
+      "email": "pablolp90@gmail.com",
+      "url": "https://github.com/pablolazaro"
+    },
+    {
+      "name": "Miguel María Martínez Echeverría",
+      "email": "mimarec89@gmail.com",
+      "url": "https://github.com/mimarec"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "conventional-changelog-cli": "^1.3.1"
+  }
+}
