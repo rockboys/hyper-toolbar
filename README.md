@@ -6,9 +6,9 @@
 
 ## Install
 
-Edit your `~/.hyper.js` file and add `hyper-toolbar` to the plugin's list:
+> This plugin is in very early stage of development and is not ready to be used
 
-> This plugin is in very early stage of development and is not ready to use be used.
+Edit your `~/.hyper.js` file and add `hyper-toolbar` to the plugin's list:
 
     plugins: [
       ...,
