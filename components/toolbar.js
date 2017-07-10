@@ -7,10 +7,11 @@ class HyperToolbar extends Component {
   }
 
   render () {
+    const plugins = this.props.plugins || [];
+    // plugins.forEach(plugin => console.log('type', plugin.type.displayName));
+
     return React.createElement('div', Object.assign(this.props, { className: 'hyper-toolbar' }),
-      React.createElement('div', { className: 'left-container'}, this.props.left),
-      React.createElement('div', { className: 'center-container'}, this.props.center),
-      React.createElement('div', { className: 'right-container'}, this.props.right)
+      React.createElement('div', { className: 'hyper-toolbar-container'}, this.props.plugins)
     );
   }
 }
