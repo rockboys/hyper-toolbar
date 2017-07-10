@@ -48,3 +48,47 @@ In order to add your own plugin to `hyper-cwd` you must decorate the main `Hyper
         }
       };
     }
+
+# Decorate `HyperToolbar` state
+
+`hyper-toolbar` maps the configuration into the state of `Hyper` component under `toolbar` name, also it creates a property called `state` in this object to store whatever you need to pass as property to your plugin.
+
+It's important that you pick a property inside this `state` object for your plugin with a unique name in order to avoid collisions with other plugins.
+
+    module.exports = ({ sessions }, map) => {
+      return Object.assign({}, map, {
+        toolbar: {
+          state: {
+            cwd: {
+              directory: sessions[sessions.activeUid].cwd
+            }
+          }
+        }
+      });
+    };
+
+    class HyperToolbarCwd extends React.component {
+      constructor (props) {
+        super(props);
+      }
+
+      render () {
+        return React.createElement('p', null, `I'm in the ${props.directory} directory`);
+      }
+    }
+
+    exports.decorateHyperToolbar = (HyperToolbar, { React }) => {
+      return class extends React.Component {
+        constructor (props) {
+          super(props);
+        }
+
+        render () {
+          const plugin = React.createElement(HyperToolbarCwd, this.props.state.cwd);
+
+          this.props.plugins = this.props.plugins.concat(plugin);
+
+          return React.createElement(HyperToolbar, this.props);
+        }
+      };
+    }
