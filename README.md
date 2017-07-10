@@ -53,7 +53,7 @@ In order to add your own plugin to `hyper-cwd` you must decorate the main `Hyper
 
 `hyper-toolbar` maps the configuration into the state of `Hyper` component under `toolbar` name, also it creates a property called `state` in this object to store whatever you need to pass as property to your plugin.
 
-It's important that you pick a property inside this `state` object for your plugin with a unique name in order to avoid collisions with other plugins.
+This `toolbar` object is accesible when you decorate `HyperToolbar` component so you can pass properties down to your component. It's important that you pick a property inside this `state` object for your plugin with a unique name in order to avoid collisions with other plugins.
 
     module.exports = ({ sessions }, map) => {
       return Object.assign({}, map, {
