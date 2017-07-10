@@ -1,5 +1,4 @@
 module.exports = (config) => {
-  console.log('palopajaro')
   return Object.assign({}, config, {
     css: `
       ${config.css || ''}

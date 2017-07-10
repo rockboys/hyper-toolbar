@@ -1,8 +1,8 @@
-const decorate = require('hyper/decorate');
-const Component = require('hyper/component');
-const HyperToolbar = require('../components/toolbar');
-
 module.exports = (Hyper, { React }) => {
+  const decorate = require('hyper/decorate');
+  const Component = require('hyper/component');
+  const HyperToolbar = require('../components/toolbar');
+
   return class extends Component {
     constructor (props) {
       super(props);

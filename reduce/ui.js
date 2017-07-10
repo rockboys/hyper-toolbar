@@ -8,5 +8,5 @@ module.exports = (state, { type, config }) => {
       break
   }
 
-  return state
+  return state;
 };
