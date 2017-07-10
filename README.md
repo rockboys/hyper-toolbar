@@ -49,7 +49,7 @@ In order to add your own plugin to `hyper-cwd` you must decorate the main `Hyper
       };
     }
 
-# Decorate `HyperToolbar` state
+### Decorate `HyperToolbar` state
 
 `hyper-toolbar` maps the configuration into the state of `Hyper` component under `toolbar` name, also it creates a property called `state` in this object to store whatever you need to pass as property to your plugin.
 
