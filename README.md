@@ -21,6 +21,7 @@ Edit your `~/.hyper.js` file and add `hyper-toolbar` to the plugin's list:
 
 It's easy to build your own plugin for `hyper-toolbar`. Toolbar's extensions are like every Hyper's extensions with a few particularities.
 
+
 ### Decorate `HyperToolbar` component
 
 In order to add your own plugin to `hyper-cwd` you must decorate the main `HyperToolbar` exporting a function named `decorateHyperToolbar` and adding your plugin to the plugin's list of the component's properties.
