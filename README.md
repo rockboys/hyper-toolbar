@@ -27,7 +27,7 @@ It's easy to build your own plugin for `hyper-toolbar`. Toolbar's extensions are
 
 You must set this property in your plugin's component as follows, always using *kebab-case*:
 
-    class HyperToolbarAwesomePlugin extends React.component {
+    class HyperToolbarAwesomePlugin extends React.Component {
       constructor (props) {
         super(props);
       }
@@ -43,7 +43,7 @@ You must set this property in your plugin's component as follows, always using *
 
 In order to add your own plugin to `hyper-toolbar` you must decorate the main `HyperToolbar` exporting a function named `decorateHyperToolbar` and adding your plugin to the plugin's list of the component's properties.
 
-    class HyperToolbarAwesomePlugin extends React.component {
+    class HyperToolbarAwesomePlugin extends React.Component {
       constructor (props) {
         super(props);
       }
@@ -89,7 +89,7 @@ This `toolbar` object is accesible when you decorate `HyperToolbar` component so
       });
     };
 
-    class HyperToolbarCwd extends React.component {
+    class HyperToolbarCwd extends React.Component {
       constructor (props) {
         super(props);
       }
