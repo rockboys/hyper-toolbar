@@ -21,10 +21,11 @@ Edit your `~/.hyper.js` file and add `hyper-toolbar` to the plugin's list:
 
 It's easy to build your own plugin for `hyper-toolbar`. Toolbar's extensions are like every Hyper's extensions with a few particularities.
 
+### Set `displayName` React's component property
 
-### Decorate `HyperToolbar` component
+`hyper-toolbar` uses [`displayName`](https://facebook.github.io/react/docs/react-component.html#displayname) property to identify plugins and arrange them according to the configuration.
 
-In order to add your own plugin to `hyper-cwd` you must decorate the main `HyperToolbar` exporting a function named `decorateHyperToolbar` and adding your plugin to the plugin's list of the component's properties.
+You must set this property in your plugin's component as follows, always using *kebab-case*:
 
     class HyperToolbarAwesomePlugin extends React.component {
       constructor (props) {
@@ -35,6 +36,24 @@ In order to add your own plugin to `hyper-cwd` you must decorate the main `Hyper
         return React.createElement('p', null, `I'm a awesome hyper-toolbar plugin`);
       }
     }
+
+    HyperToolbarAwesomePlugin.displayName = 'hyper-toolbar-awesome-plugin';
+
+### Decorate `HyperToolbar` component
+
+In order to add your own plugin to `hyper-toolbar` you must decorate the main `HyperToolbar` exporting a function named `decorateHyperToolbar` and adding your plugin to the plugin's list of the component's properties.
+
+    class HyperToolbarAwesomePlugin extends React.component {
+      constructor (props) {
+        super(props);
+      }
+
+      render () {
+        return React.createElement('p', null, `I'm a awesome hyper-toolbar plugin`);
+      }
+    }
+
+    HyperToolbarAwesomePlugin.displayName = 'hyper-toolbar-awesome-plugin';
 
     exports.decorateHyperToolbar = (HyperToolbar, { React }) => {
       return class extends React.Component {
@@ -79,6 +98,8 @@ This `toolbar` object is accesible when you decorate `HyperToolbar` component so
         return React.createElement('p', null, `I'm in the ${props.directory} directory`);
       }
     }
+
+    HyperToolbarCwd.displayName = 'hyper-toolbar-cwd';
 
     exports.decorateHyperToolbar = (HyperToolbar, { React }) => {
       return class extends React.Component {
